@@ -26,19 +26,20 @@
             font-weight: 700;
         }
 
-        h1 { font-size: 70px; line-height: 1.1; margin-bottom: 20px; }
-        h2.section-title { font-size: 48px; margin-bottom: 50px; position: relative; }
+        /* Увеличенные шрифты для эффекта "во весь экран" на ПК */
+        h1 { font-size: 85px; line-height: 1.1; margin-bottom: 30px; }
+        h2.section-title { font-size: 60px; margin-bottom: 50px; position: relative; }
         h2.section-title::after {
             content: '';
             display: block;
-            width: 60px;
-            height: 4px;
+            width: 80px;
+            height: 5px;
             background-color: #6B8E23;
-            margin-top: 15px;
+            margin-top: 20px;
         }
-        h3 { font-size: 28px; margin-bottom: 15px; }
-        p, li, th, td { font-size: 18px; line-height: 1.6; margin-bottom: 15px; }
-        ul { padding-left: 20px; }
+        h3 { font-size: 34px; margin-bottom: 20px; }
+        p, li, th, td { font-size: 22px; line-height: 1.6; margin-bottom: 15px; }
+        ul { padding-left: 30px; }
 
         .website-section {
             min-height: 100vh;
@@ -46,7 +47,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 80px 20px;
+            padding: 80px 40px;
         }
 
         /* Чередование фонов для красоты */
@@ -56,22 +57,22 @@
 
         .container {
             width: 100%;
-            max-width: 1200px; /* Ограничиваем ширину контента */
+            max-width: 1500px; /* Сильно расширили контент для больших экранов ПК */
             margin: 0 auto;
         }
 
         .two-column {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 80px;
             align-items: center;
         }
 
         .image-wrapper {
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-            height: 450px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.08);
+            height: 600px; /* Сделали картинки значительно выше на ПК */
             background-color: #F8F5F1;
         }
 
@@ -90,13 +91,13 @@
         .tiled-content {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 40px;
         }
 
         .tile {
             background-color: #F8F5F1;
-            border-radius: 16px;
-            padding: 40px 30px;
+            border-radius: 20px;
+            padding: 50px 40px;
             text-align: center;
             border: 1px solid #E6E2DD;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -109,13 +110,13 @@
 
         .tile .icon {
             color: #6B8E23;
-            font-size: 40px;
-            margin-bottom: 20px;
+            font-size: 50px;
+            margin-bottom: 25px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             background: #fff;
             border-radius: 50%;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -123,12 +124,13 @@
 
         /* Цитата */
         blockquote {
-            font-size: 36px;
+            font-size: 46px;
             font-family: 'Playfair Display', serif;
             text-align: center;
             padding: 0 40px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             color: #2C2A29;
+            line-height: 1.4;
         }
 
         /* Таблица */
@@ -136,12 +138,12 @@
             width: 100%;
             border-collapse: collapse;
             background: #fff;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
-        th, td { padding: 20px; text-align: left; border-bottom: 1px solid #E6E2DD; }
-        th { background-color: #6B8E23; color: #fff; font-weight: 600; }
+        th, td { padding: 25px; text-align: left; border-bottom: 1px solid #E6E2DD; }
+        th { background-color: #6B8E23; color: #fff; font-weight: 600; font-size: 24px; }
 
         .fade-up {
             opacity: 0;
@@ -155,10 +157,22 @@
             transform: translateY(0);
         }
 
+        /* Адаптивность для планшетов */
+        @media (max-width: 1200px) {
+            .container { max-width: 100%; padding: 0 20px; }
+            h1 { font-size: 60px; }
+            h2.section-title { font-size: 48px; }
+            p, li, th, td { font-size: 18px; }
+            .image-wrapper { height: 400px; }
+            blockquote { font-size: 36px; }
+            .two-column { gap: 40px; }
+        }
+
         /* Адаптивность для мобильных */
         @media (max-width: 900px) {
             .two-column, .tiled-content { grid-template-columns: 1fr; gap: 30px; }
             h1 { font-size: 48px; }
+            h2.section-title { font-size: 36px; }
             .website-section { padding: 60px 20px; min-height: auto; }
             .image-wrapper { height: 300px; }
         }
@@ -175,7 +189,7 @@
                     <p style="margin-bottom: 20px;">Ученик 5 «И» класса<br>Михтеев Никита</p>
                     <p style="color: #2C2A29; font-weight: 600; margin-bottom: 5px;">Проверила:</p>
                     <p style="margin-bottom: 30px;">Учитель технологии<br>Черпакова Ольга</p>
-                    <p style="color: #A09C98; font-size: 16px;">г. Батайск, 2026</p>
+                    <p style="color: #A09C98; font-size: 20px;">г. Батайск, 2026</p>
                 </div>
             </div>
         </div>
@@ -207,7 +221,7 @@
                 </div>
                 <div class="image-wrapper animate-me">
                     <!-- Твоё фото -->
-                    <img alt="Моя прямоугольная тканевая игольница" src="5199518315582265015_2.jpg">
+                    <img alt="Моя прямоугольная тканевая игольница" src="https://storage.googleapis.com/gemini-artifacts-upload/user-uploads/5199518315582265015_2.jpg">
                 </div>
             </div>
         </div>
@@ -314,9 +328,9 @@
         <div class="container">
             <h2 class="section-title animate-me">Результат работы</h2>
             <div class="two-column">
-                <div class="image-wrapper animate-me" style="border-radius: 50%; width: 400px; height: 400px; margin: 0 auto; border: 10px solid #fff;">
+                <div class="image-wrapper animate-me" style="border-radius: 50%; width: 500px; height: 500px; margin: 0 auto; border: 12px solid #fff;">
                     <!-- Твоё фото 2 -->
-                    <img alt="Моя новогодняя игольница" src="5199518315582265015_2.jpg">
+                    <img alt="Моя новогодняя игольница" src="https://storage.googleapis.com/gemini-artifacts-upload/user-uploads/5199518315582265015_2.jpg">
                 </div>
                 <div>
                     <h3 class="animate-me">Ручная работа</h3>
